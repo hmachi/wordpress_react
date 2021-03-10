@@ -1,0 +1,16 @@
+{
+  "files": {
+    "static/js/1.chunk.js": "/wordpress/wp-content/themes/hmachi/static/js/1.chunk.js",
+    "static/js/1.chunk.js.map": "/wordpress/wp-content/themes/hmachi/static/js/1.chunk.js.map",
+    "main.js": "/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js",
+    "main.js.map": "/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js.map",
+    "runtime-main.js": "/wordpress/wp-content/themes/hmachi/static/js/bundle.js",
+    "runtime-main.js.map": "/wordpress/wp-content/themes/hmachi/static/js/bundle.js.map",
+    "index.php": "/wordpress/wp-content/themes/hmachi/index.php"
+  },
+  "entrypoints": [
+    "static/js/bundle.js",
+    "static/js/1.chunk.js",
+    "static/js/main.chunk.js"
+  ]
+}
