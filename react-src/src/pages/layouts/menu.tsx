@@ -36,7 +36,7 @@ const getHeaderMenuProcess: GetHeaderMenuProcess = async (processCnt) => {
       console.log(error);
       processCnt -= 1;
       processCnt === 0
-        ? alert("ヘッダーメニュー取得失敗")
+        ? alert("メニュー一覧失敗")
         : await getHeaderMenuProcess(processCnt);
     });
 
@@ -57,26 +57,31 @@ const Menu: FC<Props> = (props) => {
 
   return (
     <div>
-      <div>メニュー表示</div>
-      {headerMenuList.map((headerMenu) => (
-        <div key={headerMenu.id}>
-          {headerMenu.pageType == Const.STR.PAGE ? (
-            <Link to={`${Const.URL.WEB.PAGE}/${headerMenu.objectId}`}>
-              {headerMenu.title}
-            </Link>
-          ) : headerMenu.pageType == Const.STR.CATEGORY ? (
-            <Link to={`${Const.URL.WEB.CATEGORY}/${headerMenu.objectId}`}>
-              {headerMenu.title}
-            </Link>
-          ) : headerMenu.pageType == Const.STR.POST ? (
-            <Link to={`${Const.URL.WEB.POST}/${headerMenu.objectId}`}>
-              {headerMenu.title}
-            </Link>
-          ) : (
-            <></>
-          )}
+      {props.isDispMenu ? (
+        <div>
+          {headerMenuList.map((headerMenu) => (
+            <div key={headerMenu.id}>
+              {headerMenu.pageType == Const.STR.PAGE ? (
+                <Link to={`${Const.URL.WEB.PAGE}/${headerMenu.objectId}`}>
+                  {headerMenu.title}
+                </Link>
+              ) : headerMenu.pageType == Const.STR.CATEGORY ? (
+                <Link to={`${Const.URL.WEB.CATEGORY}/${headerMenu.objectId}`}>
+                  {headerMenu.title}
+                </Link>
+              ) : headerMenu.pageType == Const.STR.POST ? (
+                <Link to={`${Const.URL.WEB.POST}/${headerMenu.objectId}`}>
+                  {headerMenu.title}
+                </Link>
+              ) : (
+                <></>
+              )}
+            </div>
+          ))}
         </div>
-      ))}
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

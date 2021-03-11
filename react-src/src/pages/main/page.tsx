@@ -7,9 +7,15 @@ import axios, { AxiosError } from "axios";
 import Const from "../../common/const";
 
 const Container = styled.div`
-  padding: 10px;
+  padding: 20px 10px;
   max-width: 800px;
   margin: 0 auto;
+
+  img {
+    max-width: 800px;
+    width: auto;
+    height: auto;
+  }
 `;
 
 type RouteProps = RouteComponentProps<{ pageId?: string }>;
@@ -32,6 +38,7 @@ type ChildrenPageData = {
   excerpt: string;
   pageType: string;
   postDate: string;
+  image: string;
 };
 
 type GetPageContentProcess = (
@@ -149,7 +156,18 @@ const Page: FC<RouteProps> = (props) => {
           dangerouslySetInnerHTML={{ __html: pageContent.content.rendered }}
         ></div>
       ) : (
-        <div>一覧ページ</div>
+        <div>
+          {childrenPageList.map((childrenPage) => (
+            <div key={childrenPage.id}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: childrenPage.image,
+                }}
+              ></div>
+              <span>{childrenPage.title}</span>
+            </div>
+          ))}
+        </div>
       )}
     </Container>
   );

@@ -30,6 +30,6 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
     <?php wp_footer(); ?>
   </div>
 
-<script src="/wordpress/wp-content/themes/hmachi/static/js/bundle.js?5774bbd13fea97c8febe"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/0.chunk.js?5774bbd13fea97c8febe"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js?5774bbd13fea97c8febe"></script></body>
+<script src="/wordpress/wp-content/themes/hmachi/static/js/bundle.js?7db368eb9de3c244e163"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/0.chunk.js?7db368eb9de3c244e163"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js?7db368eb9de3c244e163"></script></body>
 
 </html>

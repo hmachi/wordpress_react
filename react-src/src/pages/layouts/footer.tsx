@@ -43,7 +43,11 @@ const FooterTitle = styled.span`
 
 const FooterRight = styled.div`
   float: right;
-  padding: 10px 30px 0px 0px;
+  padding: 10px 30px 10px 0px;
+
+  @media screen and (max-width: 800px) {
+    clear: both;
+  }
 `;
 
 const FooterMenuRow = styled.div`
@@ -126,7 +130,7 @@ const getFooterMenuProcess: GetFooterMenuProcess = async (processCnt) => {
       console.log(error);
       processCnt -= 1;
       processCnt === 0
-        ? alert("フッターメニュー取得失敗")
+        ? alert("メニュー一覧失敗")
         : await getFooterMenuProcess(processCnt);
     });
 

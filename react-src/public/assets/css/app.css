@@ -6,7 +6,7 @@
 .wrapper {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 300px;
+  padding-bottom: 240px;
   box-sizing: border-box;
 }
 
@@ -149,4 +149,10 @@ input[type="submit"]::after {
   opacity: 0;
   -webkit-transition: all 0.3s ease 0.2s;
   transition: all 0.3s ease 0.2s;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    padding-bottom: 340px;
+  }
 }

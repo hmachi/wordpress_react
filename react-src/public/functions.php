@@ -8,6 +8,8 @@ register_nav_menus(
     ]
 );
 
+add_theme_support('post-thumbnails');
+
 /* 設定報取得取得用API */
 function get_blog_info_api()
 {
@@ -102,15 +104,24 @@ function get_children_page($params)
         'post_parent' => $params['parentId']
     ]);
 
+    $thumbnailList = [];
+    if ($queryResult->have_posts()) {
+        while ($queryResult->have_posts()) {
+            $queryResult->the_post();
+            array_push($thumbnailList, get_the_post_thumbnail());
+        }
+    }
+
     $childrenPageList = [];
-    foreach ($queryResult->posts as $pages) {
+    foreach ($queryResult->posts as $key => $pages) {
         array_push($childrenPageList, [
             'id' => $pages->ID,
             'title' => $pages->post_title,
             'content' => $pages->post_content,
             'excerpt' => $pages->post_excerpt,
             'pageType' => $pages->post_type,
-            'postDate' => $pages->post_date
+            'postDate' => $pages->post_date,
+            'image' => $thumbnailList[$key],
         ]);
     }
 

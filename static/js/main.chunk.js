@@ -13,9 +13,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _pages_layouts_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/layouts/header */ "./src/pages/layouts/header.tsx");
-/* harmony import */ var _pages_layouts_main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/layouts/main */ "./src/pages/layouts/main.tsx");
-/* harmony import */ var _pages_layouts_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/layouts/footer */ "./src/pages/layouts/footer.tsx");
+/* harmony import */ var _pages_layouts_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/layouts/menu */ "./src/pages/layouts/menu.tsx");
+/* harmony import */ var _pages_layouts_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/layouts/main */ "./src/pages/layouts/main.tsx");
+/* harmony import */ var _pages_layouts_footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/layouts/footer */ "./src/pages/layouts/footer.tsx");
 var _jsxFileName = "C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\hmachi\\react-src\\src\\App.tsx";
+
 
 
 
@@ -41,14 +43,23 @@ const App = () => {
       lineNumber: 15,
       columnNumber: 7
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_pages_layouts_main__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_pages_layouts_menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    isDispMenu: isDispMenu,
+    setIsDispMenu: setIsDispMenu,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 7
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_pages_layouts_main__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
       columnNumber: 7
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_pages_layouts_footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_pages_layouts_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -201,7 +212,11 @@ const FooterTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].sp
 `;
 const FooterRight = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   float: right;
-  padding: 10px 30px 0px 0px;
+  padding: 10px 30px 10px 0px;
+
+  @media screen and (max-width: 800px) {
+    clear: both;
+  }
 `;
 const FooterMenuRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   width: 250px;
@@ -252,7 +267,7 @@ const getFooterMenuProcess = async processCnt => {
   }).catch(async error => {
     console.log(error);
     processCnt -= 1;
-    processCnt === 0 ? alert("フッターメニュー取得失敗") : await getFooterMenuProcess(processCnt);
+    processCnt === 0 ? alert("メニュー一覧失敗") : await getFooterMenuProcess(processCnt);
   });
   return footerMenuData;
 };
@@ -280,21 +295,21 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
+      lineNumber: 161,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterContent, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158,
+      lineNumber: 162,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterLeft, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 163,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterIconLink, {
@@ -302,7 +317,7 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 164,
       columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterIcon, {
@@ -311,21 +326,21 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161,
+      lineNumber: 165,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterTitle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162,
+      lineNumber: 166,
       columnNumber: 13
     }
   }, blogInfo.title))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterRight, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165,
+      lineNumber: 169,
       columnNumber: 9
     }
   }, footerMenuList.map(footerMenu => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterMenuRow, {
@@ -333,7 +348,7 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167,
+      lineNumber: 171,
       columnNumber: 13
     }
   }, footerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.PAGE ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterLink, {
@@ -341,7 +356,7 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169,
+      lineNumber: 173,
       columnNumber: 17
     }
   }, footerMenu.title) : footerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.CATEGORY ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterLink, {
@@ -349,7 +364,7 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173,
+      lineNumber: 177,
       columnNumber: 17
     }
   }, footerMenu.title) : footerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.POST ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](FooterLink, {
@@ -357,21 +372,21 @@ const Footer = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179,
+      lineNumber: 183,
       columnNumber: 17
     }
   }, footerMenu.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](CopyrightRow, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189,
+      lineNumber: 193,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("small", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190,
+      lineNumber: 194,
       columnNumber: 9
     }
   }, "\xA9 2021 hmachi.")));
@@ -428,6 +443,18 @@ const HeaderRight = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].di
   padding: 0px 10px;
   margin-top: 5px;
 `;
+const DispMenuWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+  display: block;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+`;
+const DispMenuIconWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+`;
 const HeaderItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   float: left;
   margin-right: 30px;
@@ -480,7 +507,7 @@ const getHeaderMenuProcess = async processCnt => {
   }).catch(async error => {
     console.log(error);
     processCnt -= 1;
-    processCnt === 0 ? alert("ヘッダーメニュー取得失敗") : await getHeaderMenuProcess(processCnt);
+    processCnt === 0 ? alert("メニュー一覧失敗") : await getHeaderMenuProcess(processCnt);
   });
   return headerMenuList;
 };
@@ -508,21 +535,21 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155,
+      lineNumber: 169,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderContent, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 170,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLeft, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
+      lineNumber: 171,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderIconLink, {
@@ -530,7 +557,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158,
+      lineNumber: 172,
       columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderIcon, {
@@ -539,56 +566,70 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 173,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderTitle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 174,
       columnNumber: 13
     }
   }, blogInfo.title))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderRight, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163,
+      lineNumber: 177,
       columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DispMenuWrap, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 178,
+      columnNumber: 11
     }
   }, headerMenuList.map(headerMenu => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderItem, {
     key: headerMenu.id,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165,
-      columnNumber: 13
+      lineNumber: 180,
+      columnNumber: 15
     }
   }, headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.PAGE ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
     to: `${_common_const__WEBPACK_IMPORTED_MODULE_4__["default"].URL.WEB.PAGE}/${headerMenu.objectId}`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167,
-      columnNumber: 17
+      lineNumber: 182,
+      columnNumber: 19
     }
   }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.CATEGORY ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
     to: `${_common_const__WEBPACK_IMPORTED_MODULE_4__["default"].URL.WEB.CATEGORY}/${headerMenu.objectId}`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171,
-      columnNumber: 17
+      lineNumber: 188,
+      columnNumber: 19
     }
   }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.POST ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
     to: `${_common_const__WEBPACK_IMPORTED_MODULE_4__["default"].URL.WEB.POST}/${headerMenu.objectId}`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177,
-      columnNumber: 17
+      lineNumber: 194,
+      columnNumber: 19
     }
-  }, headerMenu.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null))))));
+  }, headerMenu.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DispMenuIconWrap, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 207,
+      columnNumber: 11
+    }
+  }, "\u30E1\u30CB\u30E5\u30FC"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -723,6 +764,105 @@ const Main = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);
+
+/***/ }),
+
+/***/ "./src/pages/layouts/menu.tsx":
+/*!************************************!*\
+  !*** ./src/pages/layouts/menu.tsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../common/const */ "./src/common/const.tsx");
+var _jsxFileName = "C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\hmachi\\react-src\\src\\pages\\layouts\\menu.tsx";
+
+
+
+
+
+
+/* ヘッダーメニュー一覧取得 */
+const getHeaderMenuProcess = async processCnt => {
+  let headerMenuList = [];
+  await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.API.GET_HEADER_MENU).then(response => {
+    headerMenuList = response.data;
+  }).catch(async error => {
+    console.log(error);
+    processCnt -= 1;
+    processCnt === 0 ? alert("メニュー一覧失敗") : await getHeaderMenuProcess(processCnt);
+  });
+  return headerMenuList;
+};
+
+const Menu = props => {
+  const [headerMenuList, setHeaderMenuList] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    getheaderMenu();
+  }, []);
+  /* フッターメニュー一覧取得 */
+
+  const getheaderMenu = async () => {
+    setHeaderMenuList(await getHeaderMenuProcess(_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].MAX_GET_PROCESS_CNT));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 5
+    }
+  }, props.isDispMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 9
+    }
+  }, headerMenuList.map(headerMenu => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    key: headerMenu.id,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 13
+    }
+  }, headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].STR.PAGE ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: `${_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.WEB.PAGE}/${headerMenu.objectId}`,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 17
+    }
+  }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].STR.CATEGORY ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: `${_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.WEB.CATEGORY}/${headerMenu.objectId}`,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 17
+    }
+  }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].STR.POST ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: `${_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.WEB.POST}/${headerMenu.objectId}`,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 17
+    }
+  }, headerMenu.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Menu);
 
 /***/ }),
 
@@ -876,9 +1016,15 @@ var _jsxFileName = "C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\hmachi\\re
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
-  padding: 10px;
+  padding: 20px 10px;
   max-width: 800px;
   margin: 0 auto;
+
+  img {
+    max-width: 800px;
+    width: auto;
+    height: auto;
+  }
 `;
 
 /* 固定ページの内容取得 */
@@ -950,7 +1096,7 @@ const Page = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146,
+      lineNumber: 153,
       columnNumber: 5
     }
   }, childrenPageList.length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
@@ -960,17 +1106,42 @@ const Page = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148,
+      lineNumber: 155,
       columnNumber: 9
     }
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 159,
       columnNumber: 9
     }
-  }, "\u4E00\u89A7\u30DA\u30FC\u30B8"));
+  }, childrenPageList.map(childrenPage => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    key: childrenPage.id,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 161,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    dangerouslySetInnerHTML: {
+      __html: childrenPage.image
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 162,
+      columnNumber: 15
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 167,
+      columnNumber: 15
+    }
+  }, childrenPage.title)))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);

@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header isDispMenu={isDispMenu} setIsDispMenu={setIsDispMenu} />
-      {/* <Menu isDispMenu={isDispMenu} setIsDispMenu={setIsDispMenu} /> */}
+      <Menu isDispMenu={isDispMenu} setIsDispMenu={setIsDispMenu} />
       <Main />
       <Footer />
     </BrowserRouter>

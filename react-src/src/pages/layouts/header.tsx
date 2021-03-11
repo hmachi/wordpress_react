@@ -34,6 +34,20 @@ const HeaderRight = styled.div`
   margin-top: 5px;
 `;
 
+const DispMenuWrap = styled.div`
+  display: block;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+`;
+
+const DispMenuIconWrap = styled.div`
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+`;
+
 const HeaderItem = styled.div`
   float: left;
   margin-right: 30px;
@@ -124,7 +138,7 @@ const getHeaderMenuProcess: GetHeaderMenuProcess = async (processCnt) => {
       console.log(error);
       processCnt -= 1;
       processCnt === 0
-        ? alert("ヘッダーメニュー取得失敗")
+        ? alert("メニュー一覧失敗")
         : await getHeaderMenuProcess(processCnt);
     });
 
@@ -161,27 +175,36 @@ const Header: FC<Props> = (props) => {
           </HeaderIconLink>
         </HeaderLeft>
         <HeaderRight>
-          {headerMenuList.map((headerMenu) => (
-            <HeaderItem key={headerMenu.id}>
-              {headerMenu.pageType == Const.STR.PAGE ? (
-                <HeaderLink to={`${Const.URL.WEB.PAGE}/${headerMenu.objectId}`}>
-                  {headerMenu.title}
-                </HeaderLink>
-              ) : headerMenu.pageType == Const.STR.CATEGORY ? (
-                <HeaderLink
-                  to={`${Const.URL.WEB.CATEGORY}/${headerMenu.objectId}`}
-                >
-                  {headerMenu.title}
-                </HeaderLink>
-              ) : headerMenu.pageType == Const.STR.POST ? (
-                <HeaderLink to={`${Const.URL.WEB.POST}/${headerMenu.objectId}`}>
-                  {headerMenu.title}
-                </HeaderLink>
-              ) : (
-                <></>
-              )}
-            </HeaderItem>
-          ))}
+          <DispMenuWrap>
+            {headerMenuList.map((headerMenu) => (
+              <HeaderItem key={headerMenu.id}>
+                {headerMenu.pageType == Const.STR.PAGE ? (
+                  <HeaderLink
+                    to={`${Const.URL.WEB.PAGE}/${headerMenu.objectId}`}
+                  >
+                    {headerMenu.title}
+                  </HeaderLink>
+                ) : headerMenu.pageType == Const.STR.CATEGORY ? (
+                  <HeaderLink
+                    to={`${Const.URL.WEB.CATEGORY}/${headerMenu.objectId}`}
+                  >
+                    {headerMenu.title}
+                  </HeaderLink>
+                ) : headerMenu.pageType == Const.STR.POST ? (
+                  <HeaderLink
+                    to={`${Const.URL.WEB.POST}/${headerMenu.objectId}`}
+                  >
+                    {headerMenu.title}
+                  </HeaderLink>
+                ) : (
+                  <></>
+                )}
+              </HeaderItem>
+            ))}
+          </DispMenuWrap>
+          {/* TODO メニューアイコンの表示 */}
+          {/* クリック時にメニュー画面を開く */}
+          <DispMenuIconWrap>メニュー</DispMenuIconWrap>
         </HeaderRight>
       </HeaderContent>
     </Container>
