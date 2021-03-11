@@ -82,13 +82,15 @@ let Const;
       FRONT_PAGE: WEB_BASE_URL,
       PAGE: `${WEB_BASE_URL}/page`,
       CATEGORY: `${WEB_BASE_URL}/category`,
-      POST: `${WEB_BASE_URL}/post`
+      POST: `${WEB_BASE_URL}/post`,
+      INQUERY: `${WEB_BASE_URL}/inquery`
     },
     API: {
-      GET_BLOG_INFO: `${API_BASE_URL}/bloginfo/v1/get`,
-      GET_HEADER_MENU: `${API_BASE_URL}/header/v1/menu/get`,
-      GET_FOOTER_MENU: `${API_BASE_URL}/footer/v1/menu/get`,
+      GET_BLOG_INFO: `${API_BASE_URL}/bloginfo/get`,
+      GET_HEADER_MENU: `${API_BASE_URL}/header/menu/get`,
+      GET_FOOTER_MENU: `${API_BASE_URL}/footer/menu/get`,
       GET_PAGE_CONTENT: `${API_BASE_URL}/wp/v2/pages/`,
+      GET_CHILDREN_PAGE: `${API_BASE_URL}/page/children/get/`,
       GET_POST_CONTENT: `${API_BASE_URL}/wp/v2/posts/`
     },
     IMAGE: {
@@ -406,6 +408,9 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   width: 100%;
   border-bottom: 1px solid #ddd;
   padding: 10px 0px 15px 0px;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
 `;
 const HeaderContent = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   &::after {
@@ -503,21 +508,21 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 155,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderContent, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 156,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLeft, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 157,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderIconLink, {
@@ -525,7 +530,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155,
+      lineNumber: 158,
       columnNumber: 11
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderIcon, {
@@ -534,21 +539,21 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 159,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderTitle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
+      lineNumber: 160,
       columnNumber: 13
     }
   }, blogInfo.title))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderRight, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 163,
       columnNumber: 9
     }
   }, headerMenuList.map(headerMenu => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderItem, {
@@ -556,7 +561,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162,
+      lineNumber: 165,
       columnNumber: 13
     }
   }, headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.PAGE ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
@@ -564,7 +569,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164,
+      lineNumber: 167,
       columnNumber: 17
     }
   }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.CATEGORY ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
@@ -572,7 +577,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168,
+      lineNumber: 171,
       columnNumber: 17
     }
   }, headerMenu.title) : headerMenu.pageType == _common_const__WEBPACK_IMPORTED_MODULE_4__["default"].STR.POST ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](HeaderLink, {
@@ -580,7 +585,7 @@ const Header = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174,
+      lineNumber: 177,
       columnNumber: 17
     }
   }, headerMenu.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null))))));
@@ -622,6 +627,7 @@ var _jsxFileName = "C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\hmachi\\re
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  top: 56px;
   position: relative;
 `;
 
@@ -630,14 +636,14 @@ const Main = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -647,14 +653,14 @@ const Main = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 25
       }
     }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -663,14 +669,14 @@ const Main = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 35
       }
     })),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -679,14 +685,14 @@ const Main = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 32,
         columnNumber: 35
       }
     })),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -695,14 +701,14 @@ const Main = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
+        lineNumber: 36,
         columnNumber: 35
       }
     })),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
@@ -710,7 +716,7 @@ const Main = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 9
     }
   })));
@@ -746,6 +752,8 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
 `;
 
 const process = async url => {
+  // TODO カテゴリIDに紐づくカテゴリデータ一覧の取得
+  // wp rest apiにパラメータを渡す
   let data = null;
   await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(url).then(response => {
     console.log(response);
@@ -764,7 +772,7 @@ const Category = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 44,
       columnNumber: 5
     }
   }, "\u30AB\u30C6\u30B4\u30EA\u30FC\u30DA\u30FC\u30B8", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
@@ -774,7 +782,7 @@ const Category = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 46,
       columnNumber: 7
     }
   }));
@@ -869,13 +877,22 @@ var _jsxFileName = "C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\hmachi\\re
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   padding: 10px;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
 /* 固定ページの内容取得 */
 const getPageContentProcess = async (pageId, processCnt) => {
-  let pageContentData = {};
+  let pageContentData = {
+    id: 0,
+    title: {
+      rendered: ""
+    },
+    content: {
+      rendered: ""
+    },
+    type: ""
+  };
   await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.API.GET_PAGE_CONTENT + pageId).then(response => {
     console.log(response.data);
     pageContentData = response.data;
@@ -886,40 +903,74 @@ const getPageContentProcess = async (pageId, processCnt) => {
   });
   return pageContentData;
 };
+/* 子ページ一覧取得 */
+
+
+const getChildrenPageProcess = async (pageId, processCnt) => {
+  let childrenPageList = [];
+  await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_common_const__WEBPACK_IMPORTED_MODULE_3__["default"].URL.API.GET_CHILDREN_PAGE + pageId).then(response => {
+    console.log(response.data);
+    childrenPageList = response.data;
+  }).catch(async error => {
+    console.log(error);
+    processCnt -= 1;
+    processCnt === 0 ? alert("子ページ一覧取得失敗") : await getChildrenPageProcess(pageId, processCnt);
+  });
+  return childrenPageList;
+};
 /* 固定ページ */
 
 
 const Page = props => {
-  const [pageContent, setPageContent] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
-  const [dom, setDom] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const [pageContent, setPageContent] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    id: 0,
+    title: {
+      rendered: ""
+    },
+    content: {
+      rendered: ""
+    },
+    type: ""
+  });
+  const [childrenPageList, srtChildrenPageList] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     getPageContent();
+    getChildrenPage();
   }, [props.match.params.pageId]);
 
   const getPageContent = async () => {
-    const response = await getPageContentProcess(Number(props.match.params.pageId), _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].MAX_GET_PROCESS_CNT);
-    setDom(response.content.rendered); // 以下のようにしてページのデータを取得する
-    // /wp-json/wp/v2/posts/:object_id
+    setPageContent(await getPageContentProcess(Number(props.match.params.pageId), _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].MAX_GET_PROCESS_CNT));
+  };
+
+  const getChildrenPage = async () => {
+    srtChildrenPageList(await getChildrenPageProcess(Number(props.match.params.pageId), _common_const__WEBPACK_IMPORTED_MODULE_3__["default"].MAX_GET_PROCESS_CNT));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Container, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 146,
       columnNumber: 5
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+  }, childrenPageList.length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     dangerouslySetInnerHTML: {
-      __html: dom
+      __html: pageContent.content.rendered
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 7
+      lineNumber: 148,
+      columnNumber: 9
     }
-  }));
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152,
+      columnNumber: 9
+    }
+  }, "\u4E00\u89A7\u30DA\u30FC\u30B8"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
@@ -1105,5 +1156,5 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\th
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

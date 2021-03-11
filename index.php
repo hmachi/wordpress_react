@@ -19,20 +19,8 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   <meta name="description" content="Web site created using create-react-wptheme" />
   <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
   <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
+  <link rel="stylesheet" href="/wordpress/wp-content/themes/hmachi/assets/css/app.css">
   <title><?php bloginfo('name'); ?></title>
-  <style>
-    * {
-      padding: 0px;
-      margin: 0px;
-    }
-
-    .wrapper {
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 300px;
-      box-sizing: border-box;
-    }
-  </style>
   <?php wp_head(); ?>
 </head>
 
@@ -42,6 +30,6 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
     <?php wp_footer(); ?>
   </div>
 
-<script src="/wordpress/wp-content/themes/hmachi/static/js/bundle.js?c7cf92b6dca510fcac30"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/1.chunk.js?c7cf92b6dca510fcac30"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js?c7cf92b6dca510fcac30"></script></body>
+<script src="/wordpress/wp-content/themes/hmachi/static/js/bundle.js?5774bbd13fea97c8febe"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/0.chunk.js?5774bbd13fea97c8febe"></script><script src="/wordpress/wp-content/themes/hmachi/static/js/main.chunk.js?5774bbd13fea97c8febe"></script></body>
 
 </html>

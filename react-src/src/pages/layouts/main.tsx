@@ -10,6 +10,7 @@ import Post from "../main/post"; // 投稿ページ
 import Const from "../../common/const";
 
 const Container = styled.div`
+  top: 56px;
   position: relative;
 `;
 

@@ -19,6 +19,9 @@ type IErrorResponse = {
 };
 
 const process = async (url: string) => {
+  // TODO カテゴリIDに紐づくカテゴリデータ一覧の取得
+  // wp rest apiにパラメータを渡す
+
   let data: any = null;
   await axios
     .get(url)

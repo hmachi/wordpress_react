@@ -12,20 +12,8 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   <meta name="description" content="Web site created using create-react-wptheme" />
   <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
   <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
+  <link rel="stylesheet" href="/wordpress/wp-content/themes/hmachi/assets/css/app.css">
   <title><?php bloginfo('name'); ?></title>
-  <style>
-    * {
-      padding: 0px;
-      margin: 0px;
-    }
-
-    .wrapper {
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 300px;
-      box-sizing: border-box;
-    }
-  </style>
   <?php wp_head(); ?>
 </head>
 

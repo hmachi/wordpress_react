@@ -1,0 +1,152 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 300px;
+  box-sizing: border-box;
+}
+
+#pg-contact {
+  text-align: center;
+}
+#pg-contact .lead {
+  padding-top: 15px;
+  font-size: 11pt;
+}
+#pg-contact .lead strong {
+  font-weight: 700;
+}
+#pg-contact .lead a {
+  text-decoration: underline;
+}
+#pg-contact .lead a:hover {
+  color: #127dd6;
+}
+#pg-contact .form-inner {
+  margin: 5% auto;
+  width: 95%;
+}
+#pg-contact .form-inner .contact-form {
+  margin: auto;
+}
+#pg-contact .form-inner .contact-form .input-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  text-align: left;
+}
+#pg-contact .form-inner .contact-form .input-box:not(:first-child) {
+  margin-top: 3%;
+}
+#pg-contact .form-inner .contact-form .input-box .label-area {
+  padding: 6px 0;
+  width: 180px;
+  font-size: 11pt;
+  white-space: nowrap;
+}
+#pg-contact .form-inner .contact-form .input-box .input-area {
+  width: 75%;
+  position: relative;
+}
+#pg-contact .form-inner .contact-form .input-box .input-area input {
+  padding: 5px;
+  width: 100%;
+  font-size: 11pt;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  height: 25px;
+}
+#pg-contact .form-inner .contact-form .input-box .input-area textarea {
+  resize: none;
+  padding: 5px;
+  width: 100%;
+  height: 243px;
+  font-size: 11pt;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+}
+#pg-contact .form-inner .contact-form .input-box .input-area input:focus,
+#pg-contact .form-inner .contact-form .input-box .input-area textarea:focus {
+  outline: none;
+  color: #343434;
+  border: 1px solid #127dd6;
+  box-shadow: 0 0 1px 0 rgba(18, 125, 214, 0.45);
+}
+#pg-contact .form-inner .contact-form .input-box .input-area .input-error {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  color: #c00;
+}
+#pg-contact
+  .form-inner
+  .contact-form
+  .input-box
+  .input-area
+  .input-error.wpcf7-not-valid-tip {
+  display: block;
+}
+#pg-contact .form-inner .contact-form .action-box {
+  margin-top: 7%;
+}
+#pg-contact .form-inner .note {
+  margin-top: 4%;
+}
+#pg-contact .form-inner .note small {
+  font-size: 11pt;
+  line-height: 2.4;
+}
+
+input[type="submit"] {
+  transition: all 0.3s ease 0.2s;
+  border: 1px solid #343434;
+  background: transparent;
+  -webkit-transition: all 0.3s ease 0.2s;
+  z-index: 1;
+  padding: 17px 0;
+  width: 200px;
+  font-size: 11pt;
+  font-family: "Noto Sans Japanese", sans-serif;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input[type="submit"]:hover {
+  background: linear-gradient(to right, #127dd6, #4ec9e5);
+  transition: all 0.3s ease 0.2s;
+  color: #fff;
+}
+input[type="submit"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(left, #127dd6, #4ec9e5);
+  background: linear-gradient(to right, #127dd6, #4ec9e5);
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.2s;
+}

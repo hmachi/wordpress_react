@@ -10,6 +10,9 @@ const Container = styled.div`
   width: 100%;
   border-bottom: 1px solid #ddd;
   padding: 10px 0px 15px 0px;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
 `;
 
 const HeaderContent = styled.div`

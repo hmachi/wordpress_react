@@ -9,12 +9,14 @@ namespace Const {
       PAGE: `${WEB_BASE_URL}/page`,
       CATEGORY: `${WEB_BASE_URL}/category`,
       POST: `${WEB_BASE_URL}/post`,
+      INQUERY: `${WEB_BASE_URL}/inquery`,
     },
     API: {
-      GET_BLOG_INFO: `${API_BASE_URL}/bloginfo/v1/get`,
-      GET_HEADER_MENU: `${API_BASE_URL}/header/v1/menu/get`,
-      GET_FOOTER_MENU: `${API_BASE_URL}/footer/v1/menu/get`,
+      GET_BLOG_INFO: `${API_BASE_URL}/bloginfo/get`,
+      GET_HEADER_MENU: `${API_BASE_URL}/header/menu/get`,
+      GET_FOOTER_MENU: `${API_BASE_URL}/footer/menu/get`,
       GET_PAGE_CONTENT: `${API_BASE_URL}/wp/v2/pages/`,
+      GET_CHILDREN_PAGE: `${API_BASE_URL}/page/children/get/`,
       GET_POST_CONTENT: `${API_BASE_URL}/wp/v2/posts/`,
     },
     IMAGE: {

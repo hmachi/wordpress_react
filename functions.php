@@ -11,7 +11,7 @@ register_nav_menus(
 /* 設定報取得取得用API */
 function get_blog_info_api()
 {
-    register_rest_route('bloginfo/v1', '/get', [
+    register_rest_route('bloginfo', '/get', [
         'methods' => 'GET',
         'callback' => 'get_blog_info',
     ]);
@@ -30,7 +30,7 @@ function get_blog_info()
 /* ヘッダーメニュー取得用API */
 function get_header_menu_api()
 {
-    register_rest_route('header/v1', '/menu/get', [
+    register_rest_route('header', '/menu/get', [
         'methods' => 'GET',
         'callback' => 'get_header_menu',
     ]);
@@ -57,7 +57,7 @@ function get_header_menu()
 /* フッターメニュー取得用API */
 function get_footer_menu_api()
 {
-    register_rest_route('footer/v1', '/menu/get', [
+    register_rest_route('footer', '/menu/get', [
         'methods' => 'GET',
         'callback' => 'get_footer_menu',
     ]);
@@ -79,4 +79,40 @@ function get_footer_menu()
         ]);
     }
     return $responseList;
+}
+
+/* 親IDに紐づく子ページ一覧取得API */
+function get_children_page_api()
+{
+    register_rest_route('page', '/children/get/(?P<parentId>\d+)', [
+        'methods' => 'GET',
+        'callback' => 'get_children_page',
+    ]);
+}
+add_action('rest_api_init', 'get_children_page_api');
+
+/* 親IDに紐づく子ページ一覧取得 */
+function get_children_page($params)
+{
+    $queryResult = new WP_Query([
+        'posts_per_page' => -1,
+        'post_type' => 'page',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'post_parent' => $params['parentId']
+    ]);
+
+    $childrenPageList = [];
+    foreach ($queryResult->posts as $pages) {
+        array_push($childrenPageList, [
+            'id' => $pages->ID,
+            'title' => $pages->post_title,
+            'content' => $pages->post_content,
+            'excerpt' => $pages->post_excerpt,
+            'pageType' => $pages->post_type,
+            'postDate' => $pages->post_date
+        ]);
+    }
+
+    return $childrenPageList;
 }
